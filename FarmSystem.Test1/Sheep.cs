@@ -1,45 +1,19 @@
 ﻿using System;
+using FarmSystem.Test1.Interface;
+using FarmSystem.Test1.Abstract;
 
 namespace FarmSystem.Test1
 {
-    public class Sheep 
+    public class Sheep: AnimalBase, IAnimalTalk, IAnimalRun
     {
-       
-        private string _id;
-        private int _noOfLegs;
+        public Sheep() : base(noOfLegs: 4)
+        { }
 
-        public string Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-            }
-        }
-
-
-        public int NoOfLegs
-        {
-            get
-            {
-                return _noOfLegs;
-            }
-            set
-            {
-                _noOfLegs = 4;
-            }
-        }
-
-
-        public void Talk()
-        {
-            Console.WriteLine("Sheep says baa!");
-        }
+        public void Talk() => Console.WriteLine("Sheep says baa!");
         
-        public void Run()
-        {
-            Console.WriteLine("Sheep is running");
-        }
+        public void Run() => Console.WriteLine("Sheep is running");
+
+        public override string ToString() => "Sheep";
     }
 
 }

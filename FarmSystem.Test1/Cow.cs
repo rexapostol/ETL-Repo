@@ -1,53 +1,24 @@
 ﻿using System;
+using FarmSystem.Test1.Interface;
+using FarmSystem.Test2.Interface;
+using FarmSystem.Test1.Abstract;
 
 namespace FarmSystem.Test1
 {
-    public class Cow 
+    public class Cow: AnimalBase, IAnimalTalk, IAnimalWalk, IAnimalRun, IMilkableAnimal
     {
-        private string _id;
-        private int _noOfLegs = 4;
+        public Cow() : base(noOfLegs: 4)
+        { }
 
+        public void Talk() => Console.WriteLine("Cow says Moo!");
 
-        public string Id
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-            }
-        }
+        public void Walk() => Console.WriteLine("Cow is walking");
 
-        public int NoOfLegs
-        {
-            get
-            {
-                return _noOfLegs;
-            }
-            set
-            {
-                _noOfLegs = 4;
-            }
-        }
+        public void ProduceMilk() =>  Console.WriteLine("Cow produced milk");
 
-        public void Talk()
-        {
-            Console.WriteLine("Cow says Moo!");
-        }
+        public void Run() => Console.WriteLine("Cow is running");
 
-        public void Walk()
-        {
-            Console.WriteLine("Cow is walking");
-        }
-
-        public void ProduceMilk()
-        {
-            Console.WriteLine("Cow produced milk");
-        }
-
-        public void Run()
-        {
-            Console.WriteLine("Cow is running");
-        }
+        public override string ToString() => "Cow";
 
     }
 }

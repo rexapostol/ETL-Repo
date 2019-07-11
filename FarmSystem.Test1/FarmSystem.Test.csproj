@@ -51,10 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\AnimalBase.cs" />
     <Compile Include="Cow.cs" />
     <Compile Include="EmydexFarmSystem.cs" />
     <Compile Include="Horse.cs" />
-    <Compile Include="IMilkableAnimal.cs" />
+    <Compile Include="Interface\IAnimal.cs" />
+    <Compile Include="Interface\IAnimalRun.cs" />
+    <Compile Include="Interface\IAnimalSound.cs" />
+    <Compile Include="Interface\IAnimalWalk.cs" />
+    <Compile Include="Interface\IMilkableAnimal.cs" />
     <Compile Include="Sheep.cs" />
     <Compile Include="Hen.cs" />
     <Compile Include="Program.cs" />
@@ -63,5 +68,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
